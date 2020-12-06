@@ -9,10 +9,10 @@ def num_hit_tree(r: int, down: int, lines: List[str]) -> int:
     # newline is not a char we care :)
     # suppose all line are with the same length
     line_len: int = len(lines[0]) - 1
-    for line in lines[1:]:
-        row += 1
-        if row % down != 0:
-            continue
+    for line in lines[1::down]:
+        #row += 1
+        # if row % down != 0:
+        #    continue
         col = (col + r) % line_len
         if(line[col] == '#'):
             cnt += 1
